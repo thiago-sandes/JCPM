@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -14,33 +14,44 @@ import {connect} from 'react-redux';
 // Styles
 import styles from './styles/Home';
 
+// Components
+import SimpleSplash from '../components/SimpleSplash';
+
 const Home = (props) => {
   const {data, navigation} = props;
 
+  const [splash, setSplash] = useState(true);
+
   useEffect(() => {
-    console.log(data);
+    setTimeout(() => {
+      setSplash(false);
+    }, 4000);
   }, [data]);
 
   return (
     <>
       <StatusBar translucent backgroundColor="transparent" />
       <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          <View style={styles.body}>
-            <TouchableOpacity onPress={() => navigation.navigate('Details')}>
-              <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>Step One</Text>
-                <Text style={styles.sectionDescription}>
-                  Edit <Text style={styles.highlight}>App.js</Text> to change
-                  this screen and then come back to see your edits.
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
+        {splash ? (
+          <SimpleSplash />
+        ) : (
+          <ScrollView
+            contentInsetAdjustmentBehavior="automatic"
+            style={styles.scrollView}>
+            <Header />
+            <View style={styles.body}>
+              <TouchableOpacity onPress={() => navigation.navigate('Details')}>
+                <View style={styles.sectionContainer}>
+                  <Text style={styles.sectionTitle}>Step One</Text>
+                  <Text style={styles.sectionDescription}>
+                    Edit <Text style={styles.highlight}>App.js</Text> to change
+                    this screen and then come back to see your edits.
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </ScrollView>
+        )}
       </SafeAreaView>
     </>
   );
