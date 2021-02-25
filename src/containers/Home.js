@@ -1,5 +1,12 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView, ScrollView, View, Text, StatusBar} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  View,
+  Text,
+  StatusBar,
+  TouchableOpacity,
+} from 'react-native';
 import {Header} from 'react-native/Libraries/NewAppScreen';
 
 import {connect} from 'react-redux';
@@ -8,7 +15,7 @@ import {connect} from 'react-redux';
 import styles from './styles/Home';
 
 const Home = (props) => {
-  const {data} = props;
+  const {data, navigation} = props;
 
   useEffect(() => {
     console.log(data);
@@ -23,13 +30,15 @@ const Home = (props) => {
           style={styles.scrollView}>
           <Header />
           <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('Details')}>
+              <View style={styles.sectionContainer}>
+                <Text style={styles.sectionTitle}>Step One</Text>
+                <Text style={styles.sectionDescription}>
+                  Edit <Text style={styles.highlight}>App.js</Text> to change
+                  this screen and then come back to see your edits.
+                </Text>
+              </View>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </SafeAreaView>

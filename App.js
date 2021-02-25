@@ -1,17 +1,20 @@
 import React from 'react';
 import {Provider} from 'react-redux';
+import {NavigationContainer} from '@react-navigation/native';
 
 // Redux store
 import store from './src/redux/store';
 
-// Containers
-import Home from './src/containers/Home';
+// Navigation
+import AppNavigation from './src/navigation/AppNavigation';
 
 const App: () => React$Node = () => {
   return (
     <>
       <Provider store={store}>
-        <Home />
+        <NavigationContainer>
+          <AppNavigation />
+        </NavigationContainer>
       </Provider>
     </>
   );
