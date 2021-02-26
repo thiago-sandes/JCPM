@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {
   FlatList,
   SafeAreaView,
-  ScrollView,
+  TextInput,
   View,
   Text,
   StatusBar,
@@ -20,6 +20,7 @@ import styles from './styles/Home';
 // Components
 import SimpleSplash from '../components/SimpleSplash';
 import Card from '../components/Card';
+import Search from '../components/Search';
 
 // API
 import {getData} from '../api/api';
@@ -33,51 +34,77 @@ const Home = (props) => {
   // Handle api call
   const handleApiCall = async () => {
     const response = await getData({s: searchTerm});
-
     if (response.Search != null) {
       setTimeout(() => {
         setMovies(response.Search);
         setSplash(false);
       }, 4000);
+    } else {
+      setMovies(null);
+      setSplash(false);
     }
   };
 
-  const onSelectItem = () => {
-    console.log('ok');
+  // Handle search action
+  const handleSearchAction = () => {
+    setSplash(true);
+    handleApiCall();
+  };
+
+  // Handle card click
+  const handleCardClick = () => {
+    navigation.navigate('Details');
+  };
+
+  // Handle movie not found
+  const handleMovieNotFound = () => {
+    return (
+      <View style={styles.error}>
+        <Text>Nenhum resultado encontrado</Text>
+      </View>
+    );
   };
 
   useEffect(() => {
     handleApiCall();
-  }, [searchTerm]);
+  }, []);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
 
       {splash ? (
         <SimpleSplash />
-      ) : data.movies ? (
-        <ScrollView>
-          <FlatList
-            data={data.movies}
-            keyExtractor={(item) => item.imdbID}
-            renderItem={({item}) => (
-              <Card
-                title={item.Title}
-                year={item.Year}
-                img={item.Poster}
-                id={item.imdbID}
-                onSelectResult={onSelectItem}
-              />
-            )}
-          />
-        </ScrollView>
       ) : (
-        <View style={styles.error}>
-          <Text>No results found</Text>
+        <View style={styles.innerContainer}>
+          <Search
+            searchTerm={searchTerm}
+            onChangeText={setSearchTerm}
+            handleSearchAction={handleSearchAction}
+          />
+          <View style={styles.list}>
+            {data.movies ? (
+              <FlatList
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={styles.flatListContainer}
+                data={data.movies}
+                keyExtractor={(item) => item.imdbID}
+                renderItem={({item}) => (
+                  <Card
+                    title={item.Title}
+                    year={item.Year}
+                    img={item.Poster}
+                    id={item.imdbID}
+                  />
+                )}
+              />
+            ) : (
+              handleMovieNotFound()
+            )}
+          </View>
         </View>
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 

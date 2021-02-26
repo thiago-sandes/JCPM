@@ -1,17 +1,13 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, Image} from 'react-native';
 
 // Styles
 import styles from './styles/Card';
 
 const Card = (props) => {
-  const {title, key, year, img, onSelectResult} = props;
+  const {title, key, year, img} = props;
   return (
-    <TouchableOpacity
-      style={styles.list}
-      onPress={() => {
-        onSelectResult();
-      }}>
+    <View style={styles.list}>
       <View>
         <Image source={{uri: `${img}`}} style={styles.image} />
       </View>
@@ -21,7 +17,7 @@ const Card = (props) => {
         </Text>
         <Text>{year}</Text>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 

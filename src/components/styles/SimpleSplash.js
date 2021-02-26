@@ -9,4 +9,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   text: {color: 'white', fontSize: 40, fontWeight: 'bold', textAlign: 'center'},
+  activityIndicator: {
+    marginTop: '2%',
+  },
 });
