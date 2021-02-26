@@ -1,8 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  scrollView: {
-    backgroundColor: '#000',
+  container: {
+    backgroundColor: '#fff',
+    flex: 1,
   },
   engine: {
     position: 'absolute',
@@ -36,5 +37,10 @@ export default StyleSheet.create({
     padding: 4,
     paddingRight: 12,
     textAlign: 'right',
+  },
+  error: {
+    justifyContent: 'center',
+    flex: 1,
+    backgroundColor: 'red',
   },
 });
