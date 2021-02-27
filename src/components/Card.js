@@ -1,23 +1,28 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 
 // Styles
 import styles from './styles/Card';
 
 const Card = (props) => {
-  const {title, key, year, img} = props;
+  const {title, id, year, img, onClick} = props;
   return (
-    <View style={styles.list}>
-      <View>
-        <Image source={{uri: `${img}`}} style={styles.image} />
+    <TouchableOpacity
+      onPress={() => {
+        onClick(id);
+      }}>
+      <View style={styles.list}>
+        <View>
+          <Image source={{uri: `${img}`}} style={styles.image} />
+        </View>
+        <View style={styles.name}>
+          <Text style={styles.details} key={id}>
+            {title}
+          </Text>
+          <Text>{year}</Text>
+        </View>
       </View>
-      <View style={styles.name}>
-        <Text style={styles.details} key={key}>
-          {title}
-        </Text>
-        <Text>{year}</Text>
-      </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

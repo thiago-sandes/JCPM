@@ -1,12 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  FlatList,
-  SafeAreaView,
-  TextInput,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {FlatList, SafeAreaView, View, Text, StatusBar} from 'react-native';
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -52,8 +45,8 @@ const Home = (props) => {
   };
 
   // Handle card click
-  const handleCardClick = () => {
-    navigation.navigate('Details');
+  const handleCardClick = (imdbID) => {
+    navigation.navigate('Details', {imdbID});
   };
 
   // Handle movie not found
@@ -65,8 +58,12 @@ const Home = (props) => {
     );
   };
 
+  // Handling lifecycle
   useEffect(() => {
     handleApiCall();
+    return () => {
+      setSplash(false);
+    };
   }, []);
 
   return (
@@ -95,6 +92,7 @@ const Home = (props) => {
                     year={item.Year}
                     img={item.Poster}
                     id={item.imdbID}
+                    onClick={handleCardClick}
                   />
                 )}
               />
