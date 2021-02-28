@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimpleSplash snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "orange",
+      "height": "100%",
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 40,
+        "fontWeight": "bold",
+        "textAlign": "center",
+      }
+    }
+  >
+    Carregando os dados...
+  </Text>
+  <ActivityIndicator
+    animating={true}
+    color="#fff"
+    hidesWhenStopped={true}
+    size="large"
+    style={
+      Object {
+        "marginTop": "2%",
+      }
+    }
+  />
+</View>
+`;

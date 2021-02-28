@@ -2,9 +2,9 @@ import React from 'react';
 import {View, Button} from 'react-native';
 
 const CustomizableButton = (props) => {
-  const {styles, onPress} = props;
+  const {style, onPress} = props;
   return (
-    <View style={styles}>
+    <View style={style}>
       <Button
         title="Voltar"
         onPress={() => {

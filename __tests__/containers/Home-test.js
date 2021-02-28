@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import store from '../../__mocks__/MockedStore';
+import store from '../../__mocks__/store';
 import Home from '../../src/containers/Home';
 
 test('Home snapshot', () => {

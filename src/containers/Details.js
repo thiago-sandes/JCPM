@@ -35,7 +35,7 @@ const Details = ({route, navigation}) => {
         <ScrollView>
           <MovieInfo details={details} />
           <CustomizableButton
-            styles={styles.button}
+            style={styles.button}
             onPress={navigation.goBack}
           />
         </ScrollView>

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component tests Card snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomWidth": 1,
+        "borderLeftWidth": 1,
+        "borderRadius": 10,
+        "borderRightWidth": 1,
+        "borderTopWidth": 1,
+        "display": "flex",
+        "flexDirection": "row",
+        "marginBottom": 7,
+        "paddingBottom": 10,
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "paddingTop": 10,
+      }
+    }
+  >
+    <View>
+      <Image
+        source={
+          Object {
+            "uri": "https://m.media-amazon.com/images/M/MV5BMTMzMjMwMjcyNl5BMl5BanBnXkFtZTcwNTA1NDgzMQ@@._V1_SX300.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 7,
+            "height": 120,
+            "marginRight": 10,
+            "width": 80,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "width": "56%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 18,
+          }
+        }
+      >
+        Avenger
+      </Text>
+      <Text>
+        2006
+      </Text>
+    </View>
+  </View>
+</View>
+`;

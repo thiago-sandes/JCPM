@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieInfo snapshot 1`] = `
+Array [
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "paddingBottom": 40,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "elevation": 2,
+          "shadowColor": "#202020",
+          "shadowOffset": Object {
+            "height": 5,
+            "width": 5,
+          },
+          "shadowOpacity": 0.39,
+          "shadowRadius": 5,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://m.media-amazon.com/images/M/MV5BMTMzMjMwMjcyNl5BMl5BanBnXkFtZTcwNTA1NDgzMQ@@._V1_SX300.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 7,
+            "height": 290,
+            "width": 210,
+          }
+        }
+      />
+    </View>
+    <Text
+      style={
+        Object {
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "padding": 10,
+        }
+      }
+    >
+      Avenger
+    </Text>
+    <Text
+      style={
+        Object {
+          "fontSize": 17,
+        }
+      }
+    >
+      09 Apr 2006
+    </Text>
+  </View>,
+  <View
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "marginLeft": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 17,
+          "padding": 5,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Gênero: 
+      </Text>
+       
+      Thriller
+    </Text>
+    <Text
+      style={
+        Object {
+          "fontSize": 17,
+          "padding": 5,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Duração: 
+      </Text>
+      92 min
+    </Text>
+    <Text
+      style={
+        Object {
+          "fontSize": 17,
+          "padding": 5,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Sinopse: 
+      </Text>
+      A C.I.A. Agent steps in to stop a former Special Forces Operative on a for-hire mission that poses a global threat.
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 17,
+            "padding": 5,
+          },
+          Object {
+            "fontWeight": "bold",
+          },
+        ]
+      }
+    >
+      Avaliação:
+    </Text>
+    <Text
+      style={
+        Object {
+          "fontSize": 17,
+          "padding": 5,
+        }
+      }
+    >
+      Internet Movie Database
+      : 
+      5.7/10
+    </Text>
+    <Text
+      style={
+        Object {
+          "fontSize": 17,
+          "padding": 5,
+        }
+      }
+    >
+      Rotten Tomatoes
+      : 
+      29%
+    </Text>
+  </View>,
+]
+`;
