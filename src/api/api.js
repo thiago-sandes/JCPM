@@ -10,3 +10,7 @@ export async function getData(queryParams = {s: 'Avenger'}) {
 
   return data;
 }
+
+export async function apiCallTest() {
+  return axios.get(`${API_URL}${API_KEY}&s=Avenger`).then((resp) => resp.data);
+}

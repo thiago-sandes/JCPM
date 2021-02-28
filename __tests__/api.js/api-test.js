@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-import {getData} from '../../src/api/api';
+import {apiCallTest} from '../../src/api/api';
 
 import {API_URL, API_KEY} from '../../src/utils/constants';
 
 jest.mock('axios');
 
 describe('API test', () => {
-  it('fetches successfully search results from an API ', async () => {
-    const data = {
+  it('fetches successfully search results from API ', async () => {
+    const response = {
       Search: [
         {
           Title: 'Captain America: The First Avenger',
@@ -95,20 +95,10 @@ describe('API test', () => {
       Response: 'True',
     };
 
-    axios.get.mockImplementationOnce(() => Promise.resolve(data));
+    axios.get.mockResolvedValue(response);
 
-    await expect(getData({s: 'Avenger'})).resolves.toEqual(data);
+    apiCallTest().then((data) => expect(data).toEqual(response));
 
     expect(axios.get).toHaveBeenCalledWith(`${API_URL}${API_KEY}&s=Avenger`);
-  });
-
-  it('fetches erroneously data from an API', async () => {
-    const errorMessage = 'Network Error';
-
-    axios.get.mockImplementationOnce(() =>
-      Promise.reject(new Error(errorMessage)),
-    );
-
-    await expect(getData({s: 'Avenger'})).rejects.toThrow(errorMessage);
   });
 });
