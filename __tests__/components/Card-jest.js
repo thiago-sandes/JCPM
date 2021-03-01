@@ -7,7 +7,7 @@ jest.useFakeTimers();
 function fakeTimer(callback) {
   setTimeout(() => {
     callback && callback();
-  }, 1000);
+  }, 2000);
 }
 
 // Components
